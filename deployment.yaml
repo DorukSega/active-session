@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: active-session-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: active-session
+  template:
+    metadata:
+      labels:
+        app: active-session
+    spec:
+      containers:
+      - name: active-session-container
+        image: ghcr.io/doruksega/active_session:latest
+        ports:
+        - containerPort: 5432 

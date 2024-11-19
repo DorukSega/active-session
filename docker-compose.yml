@@ -1,0 +1,19 @@
+services:
+  dev-container:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dev-container
+    ports:
+      - "5432:5432"  # PostgreSQL
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    tty: true
+
+volumes:
+  postgres-data:
+    driver: local
