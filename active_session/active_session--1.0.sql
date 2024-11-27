@@ -34,7 +34,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- requires pg_cron
-CREATE EXTENSION IF NOT EXISTS pg_cron;
+--CREATE EXTENSION IF NOT EXISTS pg_cron;
 GRANT USAGE ON SCHEMA cron TO postgres;
 GRANT ALL PRIVILEGES ON TABLE cron.job TO postgres;
 
